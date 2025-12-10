@@ -1,10 +1,16 @@
-# 🍔 POS_McD  
+# POS_McD  
 Sistem Point of Sale (POS) sederhana berbasis **Java Swing + MySQL** yang dibuat untuk simulasi transaksi restoran cepat saji seperti McDonald's.  
 Aplikasi ini mendukung fitur pemesanan menu, perhitungan total, pembayaran, cetak struk, dan penyimpanan transaksi ke database.
 
 ---
 
-## 🚀 Fitur Utama
+Clone Project
+```
+git clone https://github.com/DevLabsss/POS_McD.git
+cd POS_McD
+```
+
+## Fitur Utama
 
 ### ✔ 1. Manajemen Pesanan
 - Klik tombol menu → item otomatis masuk ke tabel.
@@ -54,21 +60,22 @@ Menggunakan transaksi database (`setAutoCommit(false)`) untuk menjaga konsistens
 
 ---
 
-## 🗂 Struktur Project
+## 📂 Struktur Project
+
+```text
 POS_McD/
 │
 ├── src/app/
-│ ├── NewJFrame.java // UI utama + logika program
-│ ├── DB.java // Koneksi database
-│ ├── Config.java // Alternatif konfigurasi database
-│ └── images/ // Gambar menu
+│   ├── NewJFrame.java   // GUI + Logika POS
+│   ├── DB.java          // Koneksi database
+│   └── images/          // Gambar-gambar menu
 │
-├── nbproject/ // Konfigurasi NetBeans
+├── nbproject/           // Konfigurasi NetBeans
 └── README.md
-
+```
 ---
 
-## 🛠 Teknologi yang Digunakan
+## Teknologi yang Digunakan
 - **Java Swing** (GUI)
 - **MySQL / MariaDB**
 - **JDBC**
