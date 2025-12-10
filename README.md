@@ -60,7 +60,7 @@ POS_McD/
 ├── src/app/
 │ ├── NewJFrame.java // UI utama + logika program
 │ ├── DB.java // Koneksi database
-│ ├── Config.java // Alternatif koneksi
+│ ├── Config.java // Alternatif konfigurasi database
 │ └── images/ // Gambar menu
 │
 ├── nbproject/ // Konfigurasi NetBeans
@@ -79,13 +79,11 @@ POS_McD/
 
 ## ⚙ Cara Menjalankan Project
 
-### 1. Import Database
+### 1. Import Database  
 Buat database:
 
 ```sql
 CREATE DATABASE pos_mcd;
-
-Import table :
 USE pos_mcd;
 
 CREATE TABLE transactions (
@@ -106,17 +104,18 @@ CREATE TABLE transaction_items (
     price DOUBLE,
     FOREIGN KEY (transaction_id) REFERENCES transactions(id)
 );
+```
 
+### 2. Setting Koneksi (DB.java)
 
-###  2. Setting Koneksi (DB.java)
+```java
 String url = "jdbc:mysql://localhost:3306/pos_mcd";
 String user = "root";
 String pass = "";
+```
 
-3. Run Project
+### 3. Run Project
 
 Klik Run di NetBeans
-→ Aplikasi POS siap digunakan.
-
-
+Aplikasi POS siap digunakan ✔
 
