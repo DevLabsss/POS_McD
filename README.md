@@ -55,4 +55,68 @@ Menggunakan transaksi database (`setAutoCommit(false)`) untuk menjaga konsistens
 ---
 
 ## 🗂 Struktur Project
+POS_McD/
+│
+├── src/app/
+│ ├── NewJFrame.java // UI utama + logika program
+│ ├── DB.java // Koneksi database
+│ ├── Config.java // Alternatif koneksi
+│ └── images/ // Gambar menu
+│
+├── nbproject/ // Konfigurasi NetBeans
+└── README.md
+
+---
+
+## 🛠 Teknologi yang Digunakan
+- **Java Swing** (GUI)
+- **MySQL / MariaDB**
+- **JDBC**
+- **NetBeans IDE**
+- **DecimalFormat**, JTable, JTextArea, PreparedStatement
+
+---
+
+## ⚙ Cara Menjalankan Project
+
+### 1. Import Database
+Buat database:
+
+```sql
+CREATE DATABASE pos_mcd;
+
+Import table :
+USE pos_mcd;
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATETIME,
+    total DOUBLE,
+    cash DOUBLE,
+    balance DOUBLE,
+    cashier VARCHAR(50),
+    no_struk VARCHAR(50)
+);
+
+CREATE TABLE transaction_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    transaction_id INT,
+    item_id INT,
+    qty INT,
+    price DOUBLE,
+    FOREIGN KEY (transaction_id) REFERENCES transactions(id)
+);
+
+
+###  2. Setting Koneksi (DB.java)
+String url = "jdbc:mysql://localhost:3306/pos_mcd";
+String user = "root";
+String pass = "";
+
+3. Run Project
+
+Klik Run di NetBeans
+→ Aplikasi POS siap digunakan.
+
+
 
